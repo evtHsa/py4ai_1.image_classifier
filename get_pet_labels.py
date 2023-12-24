@@ -62,5 +62,5 @@ def get_pet_labels(image_dir):
     #filter out dot files
     files = [f for f in files if not f[0] == '.']
 
-    ret_dict = {fname : label for (fname, label) in [(f, fname_2_label(f)) for f in files]}
+    ret_dict = {fname : (label) for (fname, label) in [(f, fname_2_label(f)) for f in files]}
     return ret_dict
