@@ -19,7 +19,7 @@
 # Imports python modules
 from os import listdir
 
-# TODO 2: Define get_pet_labels function below please be certain to replace None
+# TXDO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
 #       with this function
 # 
@@ -40,6 +40,27 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
-    return None
+    def fname_2_label(fname):
+        label = os.path.splitext(fname)[0]
+        label = re.sub("_", ' ', label)
+        label = label.lower()
+        label = re.sub("[^a-z ]", "", label)
+        label = label.strip()
+        return label
+
+    files = listdir(image_dir)
+
+    #warn of duplicates if present
+    de_dup = list(dict.fromkeys(files))
+    if (len(de_dup) < len(files)):
+        print("Warning: duplicate files")
+    files = de_dup
+
+    # filter out directories
+    files = [f for f in files if not os.path.isdir(image_dir + "/" + f)]
+
+    #filter out dot files
+    files = [f for f in files if not f[0] == '.']
+
+    ret_dict = {fname : label for (fname, label) in [(f, fname_2_label(f)) for f in files]}
+    return ret_dict
