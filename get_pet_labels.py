@@ -18,6 +18,8 @@
 ##
 # Imports python modules
 from os import listdir
+from os import path
+import re
 
 # TXDO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
@@ -41,7 +43,7 @@ def get_pet_labels(image_dir):
          index 0 = pet image label (string)
     """
     def fname_2_label(fname):
-        label = os.path.splitext(fname)[0]
+        label = path.splitext(fname)[0]
         label = re.sub("_", ' ', label)
         label = label.lower()
         label = re.sub("[^a-z ]", "", label)
@@ -57,7 +59,7 @@ def get_pet_labels(image_dir):
     files = de_dup
 
     # filter out directories
-    files = [f for f in files if not os.path.isdir(image_dir + "/" + f)]
+    files = [f for f in files if not path.isdir(image_dir + "/" + f)]
 
     #filter out dot files
     files = [f for f in files if not f[0] == '.']
