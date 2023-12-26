@@ -84,7 +84,7 @@ def adjust_results4_isadog(results_dic, dogfile):
             #           from the variable line  
             #
             # Process line by striping newline from line
-            line = line.strip(\n)
+            line = line.strip('\n')
 
             # TXDO: 4b. REPLACE pass with CODE to check if the dogname(line) 
             #          exists within dognames_dic, then if the dogname(line) 
