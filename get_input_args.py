@@ -49,7 +49,7 @@ def get_input_args():
     # TXDO: 1a. EDIT parse.add_argument statements BELOW to add type & help for:
     #          --arch - the CNN model architecture
     #          --dogfile - text file of names of dog breeds
-    parser.add_argument('--arch', default = 'vgg', choices = ['alexnet', 'resnet', 'vgg' )
+    parser.add_argument('--arch', default = 'vgg', choices = ['alexnet', 'resnet', 'vgg'])
     parser.add_argument('--dogfile', default = 'dognames.txt' )
 
     # TXDO: 1b. Replace None with parser.parse_args() parsed argument 
