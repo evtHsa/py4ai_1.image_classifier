@@ -25,6 +25,7 @@
 
 # Imports python modules
 from time import time, sleep
+import pdb
 
 # Imports print functions that check the lab
 from print_functions_for_lab_checks import *
@@ -36,7 +37,6 @@ from classify_images import classify_images
 from adjust_results4_isadog import adjust_results4_isadog
 from calculates_results_stats import calculates_results_stats
 from print_results import print_results
-importpdb
 
 # Main program function defined below
 def main():
@@ -88,7 +88,8 @@ def main():
     # Adjusts the results dictionary to determine if classifier correctly 
     # classified images as 'a dog' or 'not a dog'. This demonstrates if 
     # model can correctly classify dog images as dogs (regardless of breed)
-    adjust_results4_isadog(results, None)
+    pdb.set_trace()
+    adjust_results4_isadog(results, in_arg.dogfile)
 
     # Function that checks Results Dictionary for is-a-dog adjustment using results
     check_classifying_labels_as_dogs(results)
@@ -113,6 +114,7 @@ def main():
     #      print_results(results, results_stats, in_arg.arch, True, True)
     # Prints summary results, incorrect classifications of dogs (if requested)
     # and incorrectly classified breeds (if requested)
+    pdb.set_trace()
     print_results(results, results_stats, None, True, True)
     
     # TXDO 0: Measure total program runtime by collecting end time
