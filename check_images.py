@@ -36,6 +36,7 @@ from classify_images import classify_images
 from adjust_results4_isadog import adjust_results4_isadog
 from calculates_results_stats import calculates_results_stats
 from print_results import print_results
+importpdb
 
 # Main program function defined below
 def main():
@@ -64,7 +65,6 @@ def main():
 
     # Function that checks Pet Images in the results Dictionary using results    
     check_creating_pet_image_labels(results)
-
 
     # TXDO 3: Define classify_images function within the file classiy_images.py
     # Once the classify_images function has been defined replace first 'None' 
